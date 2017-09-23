@@ -29,6 +29,9 @@ public:
 			}
 		}
 	}
+	typedef vector<vector<patch> > PthOfImg;
+	// "cur_PATCHES": storing the most similar patch in the query image
+	PthOfImg cur_PATCHES;
 
 private:
 	Mat query;
@@ -38,10 +41,7 @@ private:
 	static float alpha;  // decay ratio
 	static int threshold;  // the similar patch should not be in a nearby region
 
-	typedef vector<vector<patch> > PthOfImg;
 	typedef vector<vector<Mat> > PatchInQ;
-	// "cur_PATCHES": storing the most similar patch in the query image
-	PthOfImg cur_PATCHES;
 	// "q_patches": all patches in "query", including patches within the hole
 	PatchInQ q_patches;
 
